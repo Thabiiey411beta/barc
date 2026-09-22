@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep: #06101c;
+  --color-bg: #0a1828;
+  --color-surface: #102033;
+  --color-fg: #f4f7fb;
+  --color-muted: #93a8bc;
+  --color-line: #1c3348;
+  --color-accent: #9ec3e0;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", ui-sans-serif, sans-serif;
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-deep);
+    color: var(--color-fg);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--color-deep);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-deep);
+  }
+}
+
+@keyframes barc-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.barc-ticker {
+  animation: barc-ticker 36s linear infinite;
+}
+
+@keyframes barc-ring {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.barc-ring {
+  animation: barc-ring 1.1s ease-out infinite;
+}
+
+.wolf-scrim {
+  background: linear-gradient(to top, var(--color-deep), transparent 46%);
+}
+
+@media (min-width: 1024px) {
+  .wolf-scrim {
+    background: linear-gradient(to right, var(--color-deep), transparent 34%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .barc-ticker,
+  .barc-ring {
+    animation: none;
+  }
+}
