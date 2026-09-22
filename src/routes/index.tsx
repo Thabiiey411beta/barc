@@ -3,6 +3,7 @@ import { Faq, SiteFooter } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { Listing } from "@/components/listing";
 import { Path } from "@/components/path";
+import { PackChat } from "@/components/pack-chat";
 import { RaidDesk } from "@/components/raid-desk";
 import { SiteHeader } from "@/components/site-header";
 
@@ -20,6 +21,7 @@ function Home() {
         <Faq />
       </main>
       <SiteFooter />
+      <PackChat />
     </div>
   );
 }
