@@ -1,4 +1,4 @@
-import { BITES, STEPS } from "@/content/launch";
+import { ARGUS_URL, BITES, STEPS } from "@/content/launch";
 
 export function Path() {
   return (
@@ -26,6 +26,14 @@ export function Path() {
               </li>
             ))}
           </ol>
+          <a
+            href={ARGUS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex min-h-11 items-center rounded-full bg-fg px-5 text-sm font-medium text-deep transition-colors duration-200 hover:bg-accent"
+          >
+            Open the Argus token page
+          </a>
         </div>
       </div>
     </section>

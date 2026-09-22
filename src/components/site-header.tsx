@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { CA_NOTE } from "@/content/launch";
+import { CONTRACT } from "@/content/launch";
 
 const LINKS = [
   { href: "#raid", label: "Raid" },
@@ -15,7 +15,7 @@ export function SiteHeader() {
 
   async function copyCa() {
     try {
-      await navigator.clipboard.writeText(CA_NOTE);
+      await navigator.clipboard.writeText(CONTRACT);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1400);
     } catch {

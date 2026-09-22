@@ -29,12 +29,12 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-6xl px-5 py-10">
         <p className="font-display text-3xl tracking-wide text-fg">$BARC</p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted">
-          Unofficial memecoin. Not issued, endorsed, or affiliated with Circle, Arc, USDC, EURC, BlackRock, Visa,
+          Unofficial memecoin. Not issued, endorsed, or affiliated with Circle, Arc, Argus, USDC, EURC, BlackRock, Visa,
           Mastercard, DTCC, or any validator. Not the ARC network token. Nothing on this page is an offer to sell a
-          security, a solicitation, or financial advice. Memecoins can go to zero. Match any contract on the explorer
+          security, a solicitation, or financial advice. Memecoins can go to zero. Match the contract on this page
           before you sign anything. You can lose all of it.
         </p>
-        <p className="mt-6 text-xs tracking-widest text-muted uppercase">Pre-launch · Arc · 2026</p>
+        <p className="mt-6 text-xs tracking-widest text-muted uppercase">Live on Argus · Arc · 2026</p>
       </div>
     </footer>
   );

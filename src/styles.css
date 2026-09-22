@@ -26,6 +26,7 @@
     min-height: 100vh;
     background: var(--color-deep);
     font-family: var(--font-sans);
+    overflow-wrap: anywhere;
   }
 
   button:not(:disabled),

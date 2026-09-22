@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { TICKER } from "@/content/barc";
-import { CA_NOTE } from "@/content/launch";
+import { ARGUS_URL, CONTRACT } from "@/content/launch";
 
 const STATS = [
-  { k: "Supply", v: "1B", s: "1,000,000,000" },
-  { k: "Tax", v: "0 / 0", s: "as stated" },
+  { k: "Supply", v: "1B", s: "Argus launch" },
+  { k: "Tax", v: "Argus", s: "set at launch" },
   { k: "Chain", v: "Arc", s: "gas in USDC" },
-  { k: "Contract", v: "TBA", s: "posts here" },
+  { k: "Pool", v: "Live", s: "on Argus" },
 ];
 
 export function Hero() {
@@ -25,7 +25,7 @@ export function Hero() {
             <div className="wolf-scrim pointer-events-none absolute inset-0" />
           </div>
           <div className="order-2 flex flex-col justify-center px-5 py-12 sm:px-8 lg:order-1 lg:px-10 lg:py-16">
-            <p className="text-xs font-medium tracking-widest text-accent uppercase">Unofficial meme · Arc chain</p>
+            <p className="text-xs font-medium tracking-widest text-accent uppercase">Live on Argus · Arc</p>
             <h1 className="mt-3 font-display text-6xl leading-none tracking-tight text-fg sm:text-8xl">$BARC</h1>
             <p className="mt-4 max-w-md text-lg leading-snug text-fg sm:text-xl">
               They named the chain Arc. The wolf heard bark.
@@ -50,20 +50,31 @@ export function Hero() {
                 Get raid tweets
               </a>
               <a
-                href="#buy"
+                href={ARGUS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-line px-5 text-sm font-medium text-fg transition-colors duration-200 hover:border-accent"
               >
-                How to buy
+                Trade on Argus
               </a>
             </div>
-            <div className="mt-8 flex items-center justify-between gap-3 rounded-card border border-line bg-surface px-4 py-3">
-              <div className="min-w-0">
-                <p className="text-xs tracking-widest text-muted uppercase">Contract</p>
-                <p className="truncate text-lg text-fg">TBA — not in DMs</p>
+            <div className="mt-8 rounded-card border border-line bg-surface p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-xs tracking-widest text-muted uppercase">Contract · Arc</p>
+                  <p className="mt-1 break-all text-sm leading-relaxed text-fg">{CONTRACT}</p>
+                </div>
+                <CopyCa />
               </div>
-              <CopyCa />
+              <a
+                href={ARGUS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex min-h-11 items-center text-sm text-accent"
+              >
+                View on Argus
+              </a>
             </div>
-            <p className="mt-3 max-w-md text-xs leading-relaxed text-muted">{CA_NOTE}</p>
           </div>
         </div>
       </section>
@@ -119,7 +130,7 @@ function CopyCa() {
       type="button"
       onClick={async () => {
         try {
-          await navigator.clipboard.writeText(CA_NOTE);
+          await navigator.clipboard.writeText(CONTRACT);
           setCopied(true);
           window.setTimeout(() => setCopied(false), 1400);
         } catch {

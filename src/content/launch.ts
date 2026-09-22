@@ -1,5 +1,8 @@
-export const CA_NOTE =
-  "TBA — $BARC is not live. The contract will be posted on this site. An address in a reply or a DM is not official.";
+export const CONTRACT = "0xCD78f7bd8A5095412BF820d7698b1aFb55924084";
+
+export const ARGUS_URL = `https://argus.world/token/${CONTRACT}`;
+
+export const CA_NOTE = `${CONTRACT} — $BARC on Arc, launched on Argus. Match this address. A different one in a DM is not this coin.`;
 
 export const BITES = [
   {
@@ -8,11 +11,11 @@ export const BITES = [
   },
   {
     t: "One chain",
-    d: "Arc is EVM, gas is USDC, and finality is under a second. Day one still belonged to memes.",
+    d: "Arc is EVM, gas is USDC, and finality is under a second. This coin launched on Argus.",
   },
   {
     t: "One line",
-    d: "Not Circle. Not USDC. Not the ARC network token. If it isn’t on this page, it isn’t the coin.",
+    d: "Not Circle. Not USDC. Not the ARC network token. If the address isn’t the one on this page, it isn’t the coin.",
   },
 ] as const;
 
@@ -20,16 +23,16 @@ export const STEPS = [
   {
     n: "01",
     t: "A wallet that can pay Arc",
-    d: "Any EVM wallet. Gas on Arc is USDC, so you need a little of that on the chain before you can do anything.",
+    d: "Any EVM wallet. Gas on Arc is USDC, so you need a little of that on the chain before you can swap.",
   },
   {
     n: "02",
-    t: "The contract from this page",
-    d: "It says TBA until launch. When it changes, it changes here. Don’t take one from a reply, a group chat, or a lookalike ticker.",
+    t: "This contract, and no other",
+    d: `${CONTRACT}. Copy it from here. Don’t take one from a reply, a group chat, or a lookalike ticker.`,
   },
   {
     n: "03",
-    t: "A pool that actually exists",
-    d: "Swap on an Arc DEX only after a real $BARC pool is up. No pool, nothing to buy. The explorer beats a screenshot.",
+    t: "Trade it on Argus",
+    d: "The launch was on Argus, which opens the pool on Arc. Use the token page linked on this site. Check the tax there before you buy.",
   },
 ] as const;
