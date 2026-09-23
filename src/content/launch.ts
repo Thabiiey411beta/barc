@@ -7,7 +7,7 @@ export const CA_NOTE = `${CONTRACT} — $BARC on Arc, launched on Argus. Match t
 export const BITES = [
   {
     t: "One mishear",
-    d: "Arc is the chain. Bark is the sound. $BARC is the wolf that answered.",
+    d: "Arc is the chain. Bark is the sound. $BARC is the husky that showed up.",
   },
   {
     t: "One chain",

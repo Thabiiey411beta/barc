@@ -1,29 +1,34 @@
 import { ARGUS_URL, CONTRACT } from "@/content/launch";
 
 export const ONE_LINE =
-  "$BARC — the howl on Arc. Launched on Argus. Banks built the rails. The wolf took the night.";
+  "Every new chain gets a dog before it gets a bank. $BARC is the husky on Arc.";
 
 export const BIO =
-  `$BARC is the silver wolf of Arc, launched on Argus. Not a payment rail, not Circle, and not the ARC network token. CA: ${CONTRACT}. Meme only. Match the address yourself.`;
+  `Circle built Arc so dollars can move on Sunday. $BARC is the husky that showed up anyway. Launched on Argus. Not Circle. Not official ARC. CA: ${CONTRACT}.`;
 
-export const LORE = `BARC ($BARC) is a memecoin on Arc, Circle’s EVM Layer 1 for fast settlement and USDC-denominated gas. It launched on Argus.
+export const LORE = `Every new chain gets a dog before it gets a bank.
 
-The chain came out dressed for banks. BlackRock, Visa, Mastercard, and DTCC sat on the founding validator list, and the public story was quiet money. Day one was not quiet. $BARC is the wolf that showed up anyway.
+Circle built Arc so dollars can move on Sunday. $BARC is the husky that showed up anyway.
 
-The mark is a silver wolf on navy, mouth open. The ticker is the noise it makes. Bark, if you are listening. Arc, if you mishear it.
+It launched on Argus. It is not Circle and it is not the official ARC token. There are other tickers with the same letters. Ours is one contract.
 
-It is not Circle, not USDC, not EURC, and not the ARC network token. Contract: ${CONTRACT}. Trade it on Argus: ${ARGUS_URL}. Tax was set at launch on Argus — read it there before you buy. This page is the howl, not the audit.`;
+Hold it if you want the joke, and because this page treats it as a key — add the chain, check the CA, open the Sunday desk.
 
-export const LAUNCH_POST = `Arc wanted silence.
-The wolf cleared its throat.
+Contract: ${CONTRACT}
+Argus: ${ARGUS_URL}
 
-$BARC — the howl on Arc.
+Tax was set at launch on Argus. Read it there before you buy. This page is not the audit.`;
+
+export const LAUNCH_POST = `Your bank is closed on Sunday.
+Circle built Arc so the dollar doesn’t have to be.
+The husky on that chain is $BARC.
+
 Chain: Arc
 Launched: Argus
 CA: ${CONTRACT}
 ${ARGUS_URL}
 
-Unofficial. Not Circle. Meme only.`;
+Not Circle. Not the official ARC token.`;
 
 export const BLURBS = [
   { id: "line", label: "One line", hint: "Pin, bio opener, group name", text: ONE_LINE },
@@ -36,7 +41,7 @@ export type BlurbId = (typeof BLURBS)[number]["id"];
 
 export function fullKit(): string {
   return [
-    "BARC ($BARC) — the howl on Arc",
+    "BARC ($BARC) — the husky on Arc",
     "Chain: Arc · EVM · gas in USDC",
     "Status: live on Argus",
     "",
@@ -95,8 +100,8 @@ export const FAQS = [
     a: "On Argus, with a wallet that can pay gas in USDC on Arc. The token page is linked on this site. Tax was chosen at launch — Argus shows it. This site is not the trade. The Argus page is.",
   },
   {
-    q: "What is the team, and what is the utility?",
-    a: "The mark, the ticker, and this page. No doxxed team, no revenue share, no phase-two product. If a future contract says something else, the contract wins and this paragraph was a wish.",
+    q: "What is the use, besides the joke?",
+    a: "Holding $BARC is the pack pass on this site. It opens the Sunday desk: a small native-USDC send on Arc, which stays closed for wallets that do not hold the token. Same contract later can gate a watchlist. No second token, no revenue share, no hidden product.",
   },
   {
     q: "Can this go to zero?",
@@ -112,4 +117,4 @@ export const SEED_HOWLS = [
 ] as const;
 
 export const TICKER =
-  "BARC  ·  THE HOWL ON ARC  ·  LIVE ON ARGUS  ·  NOT CIRCLE  ·  NOT THE ARC TOKEN  ·  GAS IN USDC  ·  MEME ONLY  ·  ";
+  "BARC  ·  THE HUSKY ON ARC  ·  SUNDAY STILL SETTLES  ·  NOT CIRCLE  ·  NOT THE ARC TOKEN  ·  GAS IN USDC  ·  ";

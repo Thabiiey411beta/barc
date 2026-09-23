@@ -54,7 +54,7 @@ export function RaidDesk() {
       <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:py-24">
         <p className="text-xs font-medium tracking-widest text-accent uppercase">Raid desk</p>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
-          <h2 className="max-w-xl font-display text-4xl tracking-wide text-fg sm:text-6xl">
+          <h2 className="max-w-xl font-display text-4xl leading-none text-fg sm:text-5xl">
             A different bark for every raider.
           </h2>
         </div>

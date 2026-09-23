@@ -7,9 +7,13 @@
   --color-fg: #f4f7fb;
   --color-muted: #93a8bc;
   --color-line: #1c3348;
-  --color-accent: #9ec3e0;
-  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Oswald", ui-sans-serif, sans-serif;
+  --color-accent: #7eb6ff;
+  --color-ice: #d7e6ff;
+  --color-good: #9ddeb4;
+  --color-warn: #e7c48a;
+  --color-bad: #f0a8a8;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
   --radius-card: 1.25rem;
 }
 
@@ -24,7 +28,9 @@
 
   body {
     min-height: 100vh;
-    background: var(--color-deep);
+    background:
+      radial-gradient(900px 420px at 88% -12%, #16365c 0%, transparent 58%),
+      var(--color-deep);
     font-family: var(--font-sans);
     overflow-wrap: anywhere;
   }

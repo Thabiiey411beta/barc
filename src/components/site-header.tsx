@@ -3,10 +3,11 @@ import { Menu, X } from "lucide-react";
 import { CONTRACT } from "@/content/launch";
 
 const LINKS = [
+  { href: "#story", label: "Story" },
+  { href: "#tools", label: "Arc tools" },
+  { href: "#pack", label: "Pack" },
+  { href: "#sunday", label: "Sunday" },
   { href: "#raid", label: "Raid" },
-  { href: "#buy", label: "Buy" },
-  { href: "#listing", label: "Listing" },
-  { href: "#faq", label: "FAQ" },
 ];
 
 export function SiteHeader() {

@@ -5,8 +5,8 @@ export function Faq() {
   return (
     <section id="faq" className="scroll-mt-24">
       <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:py-24">
-        <p className="text-xs font-medium tracking-widest text-accent uppercase">Before you ape</p>
-        <h2 className="mt-3 font-display text-4xl tracking-wide text-fg sm:text-5xl">Read this with the lights on.</h2>
+        <p className="text-xs font-medium tracking-[0.16em] text-muted uppercase">Before you sign</p>
+        <h2 className="mt-3 font-display text-4xl leading-none text-fg sm:text-5xl">Read this with the lights on.</h2>
         <div className="mt-8 border-t border-line">
           {FAQS.map((item) => (
             <details key={item.q} className="group border-b border-line">
@@ -34,7 +34,7 @@ export function SiteFooter() {
           security, a solicitation, or financial advice. Memecoins can go to zero. Match the contract on this page
           before you sign anything. You can lose all of it.
         </p>
-        <p className="mt-6 text-xs tracking-widest text-muted uppercase">Live on Argus · Arc · 2026</p>
+        <p className="mt-6 text-xs tracking-[0.16em] text-muted uppercase">Community site · Arc · 2026</p>
       </div>
     </footer>
   );

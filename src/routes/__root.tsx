@@ -3,9 +3,9 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "BARC — the howl on Arc";
+const APP_NAME = "BARC · the husky on Arc";
 const DESCRIPTION =
-  "BARC ($BARC) is an unofficial memecoin on Arc. The silver wolf. Not Circle. Not the ARC network token. Paste-ready listing copy, launch sheet, and the howl.";
+  "Circle built Arc so dollars can move on Sunday. $BARC is the husky that showed up anyway. Add Arc, verify the contract, prove you hold the pack token.";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -22,7 +22,7 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Outfit:wght@300;400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif&display=swap",
       },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },

@@ -2,7 +2,7 @@
 
 Unofficial memecoin site for Arc. The wolf that heard bark.
 
-The page is the launch front: the mark, the contract status, paste-ready listing copy, how to buy, and a raid desk that writes a different tweet for every raider.
+The page is the launch front and a small set of Arc tools: add the chain, check a contract, and a Sunday desk that opens when the wallet holds $BARC.
 
 Not Circle. Not USDC. Not the ARC network token. Nothing here is financial advice.
 

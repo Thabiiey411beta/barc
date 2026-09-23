@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ArcDesk } from "@/components/arc-desk";
 import { Faq, SiteFooter } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { Listing } from "@/components/listing";
@@ -15,8 +16,9 @@ function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <RaidDesk />
         <Path />
+        <ArcDesk />
+        <RaidDesk />
         <Listing />
         <Faq />
       </main>

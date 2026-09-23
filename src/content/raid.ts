@@ -27,40 +27,40 @@ export type RaidBrief = {
 export const SEED_TWEETS = [
   `$BARC is live on Arc. Launched on Argus. CA: ${CONTRACT}. Match it. Not Circle.`,
   "Say Arc too fast and you get bark. That’s $BARC. Unofficial. Not the ARC token.",
-  `Gas on Arc is USDC. The noise is $BARC. Silver wolf. Contract: ${CONTRACT}.`,
-  "They built the rail for banks. The wolf launched on Argus anyway. $BARC is the mishear.",
+  `Gas on Arc is USDC. The noise is $BARC. Silver husky. Contract: ${CONTRACT}.`,
+  "They built the rail for banks. The husky launched on Argus anyway. $BARC is the mishear.",
 ];
 
 const LINES: Record<Angle, string[]> = {
   shill: [
-    `$BARC is the wolf on Arc. Launched on Argus. Not Circle. Not the ARC token. CA: ${CONTRACT}.`,
+    `$BARC is the husky on Arc. Launched on Argus. Not Circle. Not the ARC token. CA: ${CONTRACT}.`,
     "The chain wanted silence. $BARC is the bark. Live on Arc, unofficial, meme only.",
-    `If you can say Arc, you can say $BARC. Silver wolf. USDC gas. CA: ${CONTRACT}.`,
+    `If you can say Arc, you can say $BARC. Silver husky. USDC gas. CA: ${CONTRACT}.`,
     "New chain, old instinct. $BARC launched on Argus. Arc, not a promise.",
     "They filled Arc with memes on day one. $BARC is the one with a jaw. Match the address on the site.",
     `$BARC. The ticker is the sound. The chain is Arc. The contract is ${CONTRACT}.`,
   ],
   lore: [
-    "Circle built Arc for quiet money. Day one was not quiet. $BARC launched on Argus with a silver wolf.",
-    "Banks on the validator list. A wolf in the blocks. $BARC is not theirs. It just barks on Arc.",
+    "Circle built Arc for quiet money. Day one was not quiet. $BARC launched on Argus with a silver husky.",
+    "Banks on the validator list. A husky in the blocks. $BARC is not theirs. It just barks on Arc.",
     "Arc settles in under a second. $BARC takes longer, because howling is a choice. Not Circle.",
     "Mishear the chain and you get the coin. Arc. Bark. $BARC. Live on Argus.",
     "Ten billion ARC, not promised for sale. One extra letter and a jaw. $BARC is the unofficial one.",
-    `The mark is a wolf, mouth open. The ticker is $BARC. The chain is Arc. CA: ${CONTRACT}.`,
+    `The mark is a husky, mouth open. The ticker is $BARC. The chain is Arc. CA: ${CONTRACT}.`,
   ],
   reply: [
     `$BARC is live on Arc, launched on Argus. unofficial. CA: ${CONTRACT}.`,
     "you built a quiet chain and the timeline barked. $BARC. not Circle. not the ARC token.",
     "gas in USDC, noise in $BARC. Arc can settle. we can howl. launched on Argus.",
     "say it slower. Arc. now faster. bark. that’s $BARC. meme only.",
-    "the banks got the rail. the wolf got the ticker. $BARC. match the address, don’t take a DM.",
+    "the banks got the rail. the husky got the ticker. $BARC. match the address, don’t take a DM.",
     "day one was memes. $BARC launched on Argus. Arc. unofficial.",
   ],
   quote: [
-    `quoting this so the wolf has a paper trail. $BARC on Arc, launched on Argus. CA: ${CONTRACT}.`,
+    `quoting this so the husky has a paper trail. $BARC on Arc, launched on Argus. CA: ${CONTRACT}.`,
     "the quiet-chain thesis, annotated by a howl. $BARC. meme only. not Circle.",
     "leaving this here. $BARC is the mishear. Arc is the chain. only the address on the site.",
-    "for the timeline: silver wolf, ticker $BARC, chain Arc, launched on Argus.",
+    "for the timeline: silver husky, ticker $BARC, chain Arc, launched on Argus.",
     "archive the bark. $BARC. unofficial on Arc. if the address doesn’t match the site, it isn’t the coin.",
     "one more time for the back row. $BARC is not the ARC token and not Circle.",
   ],
@@ -81,7 +81,7 @@ function applyHeat(text: string, heat: Heat): string {
   }
   if (heat === "feral") {
     const first = text.split(". ")[0] ?? text;
-    const next = `${first.replace(/\.$/, "")}. The wolf is not asking.`;
+    const next = `${first.replace(/\.$/, "")}. The husky is not asking.`;
     return next.length <= 280 ? next : first;
   }
   return text;

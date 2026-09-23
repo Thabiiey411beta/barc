@@ -73,9 +73,9 @@ async function ask(apiKey: string, brief: RaidBrief): Promise<string> {
         },
         {
           role: "user",
-          content: `Write 4 different raid tweets for $BARC, an unofficial memecoin on Arc (Circle's EVM layer 1, gas paid in USDC). The joke: the ticker sounds like bark. The mark is a silver howling wolf. It is live. It launched on Argus. The only contract is ${CONTRACT}. Page: https://argus.world/token/${CONTRACT}. Never output any other hex address.
+          content: `Write 4 different raid tweets for $BARC, an unofficial memecoin on Arc (Circle's EVM layer 1, gas paid in USDC). The joke: the ticker sounds like bark. The mark is a silver husky. It is live. It launched on Argus. Holding it is a pack pass for tools on the site. The only contract is ${CONTRACT}. Page: https://argus.world/token/${CONTRACT}. Never output any other hex address.
 
-The animal is a wolf, never a dog. Never say woof, puppy, or dog.
+The animal is a husky. You may say dog. Never say wolf, woof, or puppy.
 Angle: ${brief.angle}
 Heat: ${brief.heat} (dry = deadpan, loud = cadence with at most three shouted words, feral = sharp and strange but readable). No slurs, no threats, no all-caps tweets.
 Aim this at: ${handle}

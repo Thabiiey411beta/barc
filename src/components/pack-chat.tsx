@@ -53,11 +53,11 @@ export function PackChat() {
         <section
           className="mb-3 flex w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-card border border-line bg-bg shadow-none"
           style={{ height: "min(32rem, calc(100dvh - 7rem))" }}
-          aria-label="Ask the wolf"
+          aria-label="Ask BARC"
         >
           <header className="flex items-center justify-between border-b border-line px-4 py-3">
             <div>
-              <p className="font-display text-lg tracking-wide text-fg">Ask the wolf</p>
+              <p className="font-display text-2xl leading-none text-fg">Ask BARC</p>
               <p className="text-xs text-muted">Facts from this page. Not advice.</p>
             </div>
             <button
@@ -127,7 +127,7 @@ export function PackChat() {
         onClick={() => setOpen((value) => !value)}
         className="inline-flex min-h-11 items-center rounded-full bg-fg px-5 text-sm font-medium text-deep hover:bg-accent"
       >
-        {open ? "Close" : "Ask the wolf"}
+        {open ? "Close" : "Ask BARC"}
       </button>
     </div>
   );

@@ -9,8 +9,8 @@ export function Listing() {
   return (
     <section id="listing" className="scroll-mt-24 border-b border-line">
       <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:py-24">
-        <p className="text-xs font-medium tracking-widest text-accent uppercase">Listing kit</p>
-        <h2 className="mt-3 font-display text-4xl tracking-wide text-fg sm:text-5xl">Paste-ready, four lengths.</h2>
+        <p className="text-xs font-medium tracking-[0.16em] text-muted uppercase">Copy</p>
+        <h2 className="mt-3 font-display text-4xl leading-none text-fg sm:text-5xl">The block, four lengths.</h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
           For the Dex page, the pinned post, and the bio. Lore is the description. The full kit copies all of them.
         </p>
