@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ARGUS_URL, CONTRACT } from "@/content/launch";
+import { TIERS, tierForBalance } from "@/config/utility";
 import {
   ALT_RPC,
   EXPLORER_ADDRESS,
@@ -58,16 +59,17 @@ export function ArcDesk() {
     try {
       const { wallet, balance } = await readPack();
       const short = `${wallet.slice(0, 6)}…${wallet.slice(-4)}`;
-      if (balance > 0n) {
+      const tier = tierForBalance(balance);
+      if (balance >= TIERS.pack.min) {
         setPackOk(true);
         setPackKind("good");
-        setPackMsg(`Pack pass is live for ${short}.`);
+        setPackMsg(`${tier} access is live for ${short}.`);
         setSendKind("good");
         setSendMsg("Desk is open. Send a small amount you can afford to lose.");
       } else {
         setPackOk(false);
         setPackKind("warn");
-        setPackMsg("Connected, but this wallet has no $BARC. The desk stays closed.");
+        setPackMsg(`Connected, but this wallet is ${tier}. Hold 1,000 $BARC for Pack access.`);
         setSendKind("warn");
         setSendMsg("Locked until this wallet holds $BARC on Arc.");
       }

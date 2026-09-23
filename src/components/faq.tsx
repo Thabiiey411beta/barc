@@ -31,8 +31,8 @@ export function SiteFooter() {
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted">
           Unofficial memecoin. Not issued, endorsed, or affiliated with Circle, Arc, Argus, USDC, EURC, BlackRock, Visa,
           Mastercard, DTCC, or any validator. Not the ARC network token. Nothing on this page is an offer to sell a
-          security, a solicitation, or financial advice. Memecoins can go to zero. Match the contract on this page
-          before you sign anything. You can lose all of it.
+          security, a solicitation, or financial advice. Tools can fail. Memecoins can go to zero. Match the contract on
+          this page before you sign anything. You can lose all of it.
         </p>
         <p className="mt-6 text-xs tracking-[0.16em] text-muted uppercase">Community site · Arc · 2026</p>
       </div>

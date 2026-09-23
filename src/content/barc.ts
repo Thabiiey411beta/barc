@@ -14,6 +14,8 @@ It launched on Argus. It is not Circle and it is not the official ARC token. The
 
 Hold it if you want the joke, and because this page treats it as a key — add the chain, check the CA, open the Sunday desk.
 
+Utility is the pack pass. Tools on this site read your $BARC on Arc. Gas stays USDC. No yield. No Circle. Contract wins if it ever says otherwise.
+
 Contract: ${CONTRACT}
 Argus: ${ARGUS_URL}
 
@@ -46,7 +48,7 @@ export function fullKit(): string {
     "Status: live on Argus",
     "",
     ...BLURBS.flatMap((blurb) => [blurb.label.toUpperCase(), blurb.text, ""]),
-    "Unofficial. Not issued or endorsed by Circle, Arc, USDC, or any validator. Not the ARC network token. Not financial advice. You can lose everything.",
+    "Unofficial meme only. $BARC gates the desk. Not issued or endorsed by Circle, Arc, USDC, or any validator. Not the ARC network token. Not financial advice. You can lose everything.",
   ].join("\n");
 }
 

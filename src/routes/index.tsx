@@ -7,6 +7,8 @@ import { Path } from "@/components/path";
 import { PackChat } from "@/components/pack-chat";
 import { RaidDesk } from "@/components/raid-desk";
 import { SiteHeader } from "@/components/site-header";
+import { WalletBar } from "@/components/wallet-bar";
+import { ToolDesk } from "@/components/tool-desk";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -14,10 +16,12 @@ function Home() {
   return (
     <div className="min-h-screen bg-deep text-fg">
       <SiteHeader />
+      <WalletBar />
       <main>
         <Hero />
         <Path />
         <ArcDesk />
+        <ToolDesk />
         <RaidDesk />
         <Listing />
         <Faq />

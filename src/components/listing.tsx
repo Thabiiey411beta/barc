@@ -7,7 +7,7 @@ export function Listing() {
   const active = BLURBS.find((blurb) => blurb.id === id) ?? BLURBS[2];
 
   return (
-    <section id="listing" className="scroll-mt-24 border-b border-line">
+    <section id="buy" className="scroll-mt-24 border-b border-line">
       <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:py-24">
         <p className="text-xs font-medium tracking-[0.16em] text-muted uppercase">Copy</p>
         <h2 className="mt-3 font-display text-4xl leading-none text-fg sm:text-5xl">The block, four lengths.</h2>
