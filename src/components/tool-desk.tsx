@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Copy } from "lucide-react";
-import { formatBarc, type BarcTier } from "@/config/utility";
+import { BARC, formatBarc, type BarcTier } from "@/config/utility";
 import { addArc, judgeContract, readFeeQuote, readWalletSnapshot } from "@/lib/arc";
 
 const tierOrder: BarcTier[] = ["pup", "pack", "wolf"];
+
+type TokenPrice = {
+  symbol: string;
+  priceUsd: string;
+  change24h: number | null;
+  liquidityUsd: number | null;
+  volume24h: number | null;
+  pairUrl: string;
+  updatedAt: string;
+};
 
 function hasTier(current: BarcTier, required: BarcTier): boolean {
   return tierOrder.indexOf(current) >= tierOrder.indexOf(required);
@@ -33,6 +43,33 @@ export function ToolDesk() {
   const [payTo, setPayTo] = useState("");
   const [receipt, setReceipt] = useState("");
   const [fee, setFee] = useState<string | null>(null);
+  const [tokenPrice, setTokenPrice] = useState<TokenPrice | null>(null);
+  const [priceError, setPriceError] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+
+    async function refreshPrice() {
+      try {
+        const response = await fetch(`/api/price/${BARC.address}`);
+        if (!response.ok) throw new Error("Price unavailable");
+        const nextPrice = (await response.json()) as TokenPrice;
+        if (active) {
+          setTokenPrice(nextPrice);
+          setPriceError(false);
+        }
+      } catch {
+        if (active) setPriceError(true);
+      }
+    }
+
+    void refreshPrice();
+    const interval = window.setInterval(() => void refreshPrice(), 30_000);
+    return () => {
+      active = false;
+      window.clearInterval(interval);
+    };
+  }, []);
 
   async function refreshWallet() {
     const snapshot = await readWalletSnapshot(true);
@@ -81,6 +118,15 @@ export function ToolDesk() {
           Current desk: <strong className="text-fg">{tier}</strong> · {formatBarc(balance)} $BARC
           {tier === "pup" ? " · Need 1,000 more $BARC for Pack desk." : tier === "pack" ? " · Need 99,000 more $BARC for Wolf desk." : " · Wolf desk open."}
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-line py-3 text-sm">
+          <span className="font-medium text-fg">{tokenPrice ? `${tokenPrice.symbol} $${Number(tokenPrice.priceUsd).toPrecision(6)}` : "BARC price loading"}</span>
+          {tokenPrice?.change24h !== null && tokenPrice?.change24h !== undefined ? (
+            <span className={tokenPrice.change24h >= 0 ? "text-good" : "text-warn"}>{tokenPrice.change24h >= 0 ? "+" : ""}{tokenPrice.change24h.toFixed(2)}% / 24h</span>
+          ) : null}
+          {tokenPrice?.liquidityUsd !== null && tokenPrice?.liquidityUsd !== undefined ? <span className="text-muted">Liquidity ${tokenPrice.liquidityUsd.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span> : null}
+          {tokenPrice ? <a href={tokenPrice.pairUrl} target="_blank" rel="noreferrer" className="text-accent hover:text-fg">Live market</a> : null}
+          {priceError ? <span className="text-muted">Market data unavailable</span> : null}
+        </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           <ToolCard required="pup" title="Add Arc + USDC helper">
             <p className="mt-3 text-sm leading-relaxed text-muted">One USDC balance: native 18dp for gas and value, ERC-20 6dp for approve or transfer.</p>

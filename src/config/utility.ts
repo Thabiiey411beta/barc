@@ -1,4 +1,6 @@
-const FALLBACK_BARC_ADDRESS = "0xCD78f7bd8A5095412BF820d7698b1aFb55924084";
+import { BARC as CANONICAL_BARC } from "./assets";
+
+const FALLBACK_BARC_ADDRESS = CANONICAL_BARC.address;
 
 const configuredBarcAddress = import.meta.env.VITE_BARC_ADDRESS?.trim();
 if (configuredBarcAddress && configuredBarcAddress.toLowerCase() !== FALLBACK_BARC_ADDRESS.toLowerCase()) {

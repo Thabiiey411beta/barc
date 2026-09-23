@@ -10,33 +10,122 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DenRouteImport } from './routes/den'
+import { Route as DenAuroraRouteImport } from './routes/den.aurora'
+import { Route as DenCyberRouteImport } from './routes/den.cyber'
+import { Route as DenGaiaRouteImport } from './routes/den.gaia'
+import { Route as DenTapeRouteImport } from './routes/den.tape'
+import { Route as DenTempestRouteImport } from './routes/den.tempest'
+import { Route as DenLicenseTokenIdRouteImport } from './routes/den.license.$tokenId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DenRoute = DenRouteImport.update({
+  id: '/den',
+  path: '/den',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DenAuroraRoute = DenAuroraRouteImport.update({
+  id: '/aurora',
+  path: '/aurora',
+  getParentRoute: () => DenRoute,
+} as any)
+const DenCyberRoute = DenCyberRouteImport.update({
+  id: '/cyber',
+  path: '/cyber',
+  getParentRoute: () => DenRoute,
+} as any)
+const DenGaiaRoute = DenGaiaRouteImport.update({
+  id: '/gaia',
+  path: '/gaia',
+  getParentRoute: () => DenRoute,
+} as any)
+const DenTapeRoute = DenTapeRouteImport.update({
+  id: '/tape',
+  path: '/tape',
+  getParentRoute: () => DenRoute,
+} as any)
+const DenTempestRoute = DenTempestRouteImport.update({
+  id: '/tempest',
+  path: '/tempest',
+  getParentRoute: () => DenRoute,
+} as any)
+const DenLicenseTokenIdRoute = DenLicenseTokenIdRouteImport.update({
+  id: '/license/$tokenId',
+  path: '/license/$tokenId',
+  getParentRoute: () => DenRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/den': typeof DenRouteWithChildren
+  '/den/aurora': typeof DenAuroraRoute
+  '/den/cyber': typeof DenCyberRoute
+  '/den/gaia': typeof DenGaiaRoute
+  '/den/tape': typeof DenTapeRoute
+  '/den/tempest': typeof DenTempestRoute
+  '/den/license/$tokenId': typeof DenLicenseTokenIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/den': typeof DenRouteWithChildren
+  '/den/aurora': typeof DenAuroraRoute
+  '/den/cyber': typeof DenCyberRoute
+  '/den/gaia': typeof DenGaiaRoute
+  '/den/tape': typeof DenTapeRoute
+  '/den/tempest': typeof DenTempestRoute
+  '/den/license/$tokenId': typeof DenLicenseTokenIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/den': typeof DenRouteWithChildren
+  '/den/aurora': typeof DenAuroraRoute
+  '/den/cyber': typeof DenCyberRoute
+  '/den/gaia': typeof DenGaiaRoute
+  '/den/tape': typeof DenTapeRoute
+  '/den/tempest': typeof DenTempestRoute
+  '/den/license/$tokenId': typeof DenLicenseTokenIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/den'
+    | '/den/aurora'
+    | '/den/cyber'
+    | '/den/gaia'
+    | '/den/tape'
+    | '/den/tempest'
+    | '/den/license/$tokenId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/den'
+    | '/den/aurora'
+    | '/den/cyber'
+    | '/den/gaia'
+    | '/den/tape'
+    | '/den/tempest'
+    | '/den/license/$tokenId'
+  id:
+    | '__root__'
+    | '/'
+    | '/den'
+    | '/den/aurora'
+    | '/den/cyber'
+    | '/den/gaia'
+    | '/den/tape'
+    | '/den/tempest'
+    | '/den/license/$tokenId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DenRoute: typeof DenRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +137,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/den': {
+      id: '/den'
+      path: '/den'
+      fullPath: '/den'
+      preLoaderRoute: typeof DenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/den/aurora': {
+      id: '/den/aurora'
+      path: '/aurora'
+      fullPath: '/den/aurora'
+      preLoaderRoute: typeof DenAuroraRouteImport
+      parentRoute: typeof DenRoute
+    }
+    '/den/cyber': {
+      id: '/den/cyber'
+      path: '/cyber'
+      fullPath: '/den/cyber'
+      preLoaderRoute: typeof DenCyberRouteImport
+      parentRoute: typeof DenRoute
+    }
+    '/den/gaia': {
+      id: '/den/gaia'
+      path: '/gaia'
+      fullPath: '/den/gaia'
+      preLoaderRoute: typeof DenGaiaRouteImport
+      parentRoute: typeof DenRoute
+    }
+    '/den/tape': {
+      id: '/den/tape'
+      path: '/tape'
+      fullPath: '/den/tape'
+      preLoaderRoute: typeof DenTapeRouteImport
+      parentRoute: typeof DenRoute
+    }
+    '/den/tempest': {
+      id: '/den/tempest'
+      path: '/tempest'
+      fullPath: '/den/tempest'
+      preLoaderRoute: typeof DenTempestRouteImport
+      parentRoute: typeof DenRoute
+    }
+    '/den/license/$tokenId': {
+      id: '/den/license/$tokenId'
+      path: '/license/$tokenId'
+      fullPath: '/den/license/$tokenId'
+      preLoaderRoute: typeof DenLicenseTokenIdRouteImport
+      parentRoute: typeof DenRoute
+    }
   }
 }
 
+interface DenRouteChildren {
+  DenAuroraRoute: typeof DenAuroraRoute
+  DenCyberRoute: typeof DenCyberRoute
+  DenGaiaRoute: typeof DenGaiaRoute
+  DenTapeRoute: typeof DenTapeRoute
+  DenTempestRoute: typeof DenTempestRoute
+  DenLicenseTokenIdRoute: typeof DenLicenseTokenIdRoute
+}
+
+const DenRouteChildren: DenRouteChildren = {
+  DenAuroraRoute: DenAuroraRoute,
+  DenCyberRoute: DenCyberRoute,
+  DenGaiaRoute: DenGaiaRoute,
+  DenTapeRoute: DenTapeRoute,
+  DenTempestRoute: DenTempestRoute,
+  DenLicenseTokenIdRoute: DenLicenseTokenIdRoute,
+}
+
+const DenRouteWithChildren = DenRoute._addFileChildren(DenRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DenRoute: DenRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

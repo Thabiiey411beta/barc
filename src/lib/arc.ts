@@ -1,5 +1,8 @@
 import { CONTRACT } from "@/content/launch";
 import { BARC, type BarcTier, tierForBalance } from "@/config/utility";
+import { ARC, MIN_MAX_FEE_PER_GAS } from "@/config/assets";
+
+export { MIN_MAX_FEE_PER_GAS };
 
 export const BARC_ADDRESS = BARC.address.toLowerCase();
 
@@ -12,11 +15,11 @@ export const LOOKALIKES: Record<string, string> = {
 };
 
 export const ARC_CHAIN = {
-  chainId: "0x13b2",
-  chainName: "Arc",
-  nativeCurrency: { name: "USDC", symbol: "USDC", decimals: 18 },
-  rpcUrls: ["https://rpc.mainnet.arc.io"],
-  blockExplorerUrls: ["https://explorer.arc.io"],
+  chainId: `0x${ARC.id.toString(16)}`,
+  chainName: ARC.name,
+  nativeCurrency: ARC.nativeCurrency,
+  rpcUrls: [ARC.rpc],
+  blockExplorerUrls: [ARC.explorer],
 } as const;
 
 export const EXPLORER_ADDRESS = `https://explorer.arc.io/address/${CONTRACT}`;
@@ -116,12 +119,13 @@ export async function readFeeQuote(): Promise<FeeQuote> {
   const eth = getEthereum();
   if (!eth) throw new Error("Connect an EVM wallet to read the Arc fee floor.");
   const raw = BigInt(String(await eth.request({ method: "eth_gasPrice" })));
-  const cents = Number(raw * 21_000n * 100n / 10n ** 18n) / 100;
-  const gwei = Number(raw) / 1e9;
+  const effective = raw < MIN_MAX_FEE_PER_GAS ? MIN_MAX_FEE_PER_GAS : raw;
+  const cents = Number(effective * 21_000n * 100n / 10n ** 18n) / 100;
+  const gwei = Number(effective) / 1e9;
   return {
     cents: cents.toFixed(2),
     gasPriceGwei: gwei.toFixed(2),
-    warning: gwei < 20 ? "Arc fee floor warning: max fee is under 20 gwei." : null,
+    warning: raw < MIN_MAX_FEE_PER_GAS ? "Arc fee quote was clamped to Arc's 20 gwei floor." : null,
   };
 }
 
