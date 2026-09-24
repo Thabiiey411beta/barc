@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { CONTRACT } from "@/content/launch";
+import { RALLY } from "@/config/assets";
 
 const LINKS = [
   { href: "#top", label: "Howl" },
   { href: "#cards", label: "Cards" },
+  { href: "#den", label: "Den" },
+  { href: "#mint", label: "Mint" },
   { href: "#buy", label: "Buy" },
   { href: "#raid", label: "Raid" },
   { href: "#tools", label: "Tools" },
-  { href: "#pack", label: "Pack" },
-];
+] as const;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -40,8 +43,19 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
+          <Link to="/den" className="text-sm text-muted hover:text-fg">
+            Enter
+          </Link>
         </nav>
         <div className="flex items-center gap-2">
+          <a
+            href={RALLY.mint}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden min-h-11 items-center rounded-full border border-line px-4 text-sm text-fg hover:border-accent sm:inline-flex"
+          >
+            Mint page
+          </a>
           <button
             type="button"
             onClick={copyCa}
@@ -72,6 +86,12 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
+          <Link to="/den" onClick={() => setOpen(false)} className="flex min-h-11 items-center text-base text-fg">
+            Enter the Den
+          </Link>
+          <a href={RALLY.mint} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center text-base text-fg">
+            Official mint page
+          </a>
         </nav>
       ) : null}
     </header>
