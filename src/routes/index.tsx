@@ -3,6 +3,7 @@ import { ArcDesk } from "@/components/arc-desk";
 import { Faq, SiteFooter } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { Listing } from "@/components/listing";
+import { PackReel } from "@/components/pack-reel";
 import { Path } from "@/components/path";
 import { PackChat } from "@/components/pack-chat";
 import { RaidDesk } from "@/components/raid-desk";
@@ -19,6 +20,7 @@ function Home() {
       <WalletBar />
       <main>
         <Hero />
+        <PackReel />
         <Path />
         <ArcDesk />
         <ToolDesk />
