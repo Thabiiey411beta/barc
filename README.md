@@ -8,6 +8,16 @@ Utility is access. The site reads the connected wallet's $BARC balance on Arc an
 
 Not Circle. Not USDC. Not the ARC network token. Nothing here is financial advice.
 
+## The Den
+
+The product is a three-part stack on Arc:
+
+- **USDC** is gas and settlement. No separate gas token to explain to a web2 user.
+- **Rally Club NFT** (`0xffb20f430f409829fCA99FeA64D40979cF2aA799`) is the seat. Origin trait opens Gaia / Aurora / Cyber / Tempest rooms. Holders keep commercial rights to their wolf.
+- **$BARC** is the meter. Pack / Wolf desks, DenMeter quota once deployed, and the LicenseRegistry stamp fee. It is not the vault and it pays no yield.
+
+Mint from `/mint` (wallet call to the NFTs2Me contract) or the official page at https://bored-apex-rally-club.nfts2.me/.
+
 ## Run
 
 ```bash

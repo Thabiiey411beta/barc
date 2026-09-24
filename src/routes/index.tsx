@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArcDesk } from "@/components/arc-desk";
+import { DenProduct } from "@/components/den-product";
 import { Faq, SiteFooter } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { Listing } from "@/components/listing";
+import { MintDesk } from "@/components/mint-desk";
 import { PackReel } from "@/components/pack-reel";
 import { Path } from "@/components/path";
 import { PackChat } from "@/components/pack-chat";
@@ -22,6 +24,8 @@ function Home() {
         <Hero />
         <PackReel />
         <Path />
+        <DenProduct />
+        <MintDesk compact />
         <ArcDesk />
         <ToolDesk />
         <RaidDesk />

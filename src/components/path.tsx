@@ -1,15 +1,15 @@
 const CARDS = [
   {
     t: "What Arc is",
-    d: "A chain Circle shipped so dollars can move when the bank is closed. Gas is USDC. Settlement is fast. That part is boring on purpose.",
+    d: "A chain Circle shipped so dollars can move when the bank is closed. Gas is USDC. Settlement is fast. That part is boring on purpose — and that is why a web2 checkout can live here.",
   },
   {
     t: "What $BARC is",
-    d: "Bark, with the chain sitting inside the name. A husky on Argus. Something to point at while the grown-ups talked rails.",
+    d: "The pack meter. It opens desks, sets Den quota, stamps a commercial-rights certificate, and bonds the API. It is not the vault and it is not a yield token.",
   },
   {
-    t: "What it is not",
-    d: "Not Circle. Not official ARC. Not the other $BARC tickers already on this chain. If the contract is wrong, the joke is someone else’s.",
+    t: "What the wolf is",
+    d: "Bored Apex Rally Club. Ten thousand seats. Origin rooms in the Den. Commercial rights to the face. Mint on this site or on nfts2.me. Same contract.",
   },
 ] as const;
 
