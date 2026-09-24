@@ -4,6 +4,7 @@ import { CONTRACT } from "@/content/launch";
 
 const LINKS = [
   { href: "#top", label: "Howl" },
+  { href: "#cards", label: "Cards" },
   { href: "#buy", label: "Buy" },
   { href: "#raid", label: "Raid" },
   { href: "#tools", label: "Tools" },
